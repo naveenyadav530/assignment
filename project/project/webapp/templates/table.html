@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %} Table {% endblock title %}
+
+
+{% block create_ledger_nav %} active {% endblock create_ledger_nav %}
+
+{% block page_title %} Table {% endblock page_title %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header card-header-primary">
+                    <h4 class="card-title ">Users Table</h4>
+                    <p class="card-category">List of Newly Created Users</p>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead class=" text-primary">
+                                <th>
+                                    User ID
+                                </th>
+                                <th>
+                                    Full Name
+                                </th>
+                                <th>
+                                    Email Address
+                                </th>
+                                 <th>
+                                    Address
+                                </th>
+                                <th>
+                                    Contact Number
+                                </th>
+                                <th>
+                                    Date Of Birth
+                                </th>
+                            </thead>
+
+                            <tbody>
+                            {% for data in table  %}
+                            <tr> 
+                            <td>{{data.id}}</td>
+                            <td>{{data.name}}</td>
+                            <td>{{data.email}}</td>
+                            <td>{{data.address}}</td>
+                            <td>{{data.contact}}</td>
+                            <td>{{data.dob}}</td>
+                            </tr>
+                            {% endfor %}
+                               
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+ {% endblock content %}
